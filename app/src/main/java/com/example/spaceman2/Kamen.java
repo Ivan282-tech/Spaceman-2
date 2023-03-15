@@ -4,7 +4,7 @@ public class Kamen {
 
     private float y;
     private  float x;
-    private float pomeraj = 5;
+    private float pomeraj = 6;
     private MainActivity2 aktiviti = new MainActivity2();
     private float visina = aktiviti.vratiDimenzije().getA();
     private float sirina = aktiviti.vratiDimenzije().getB();
