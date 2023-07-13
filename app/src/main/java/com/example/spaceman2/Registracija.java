@@ -50,19 +50,15 @@ public class Registracija extends AppCompatActivity {
             String SIFRA1 = sifra.getText().toString().trim();
             String SIFRA2 = potvrda.getText().toString().trim();
             MyDatabaseHelper baza = new MyDatabaseHelper(Registracija.this);
-            if(SIFRA1.length() > 6){
-                if(SIFRA1.equals(SIFRA2) && baza.proveriIme(Ime) == false){
-                    baza.dodajIgraca(ime.getText().toString().trim(), sifra.getText().toString().trim(), 0);
-                    Intent intent = new Intent(this, Login.class);
-                    startActivity(intent);
-                    this.finish();
-                } else{
-                    Toast.makeText(this, "Password do not match or name already exists", Toast.LENGTH_SHORT).show();
-                    sifra.getText().clear();
-                    potvrda.getText().clear();
-                }
-            }else {
-                Toast.makeText(this,"Password is to short",Toast.LENGTH_SHORT).show();
+            if(SIFRA1.equals(SIFRA2) && baza.proveriIme(Ime) == false){
+                baza.dodajIgraca(ime.getText().toString().trim(), sifra.getText().toString().trim(), 0);
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
+                this.finish();
+            } else{
+                Toast.makeText(this, "Password do not match or name already exists", Toast.LENGTH_SHORT).show();
+                sifra.getText().clear();
+                potvrda.getText().clear();
             }
 
 
