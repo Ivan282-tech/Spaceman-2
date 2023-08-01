@@ -54,7 +54,6 @@ public class AccountDetails extends AppCompatActivity {
         String sifra = Sifra.getText().toString().trim();
         EditText Potvrda = findViewById(R.id.sifra2);
         String potvrda = Potvrda.getText().toString().trim();
-        if(sifra.length() > 6){
             if(sifra.equals(potvrda)){
                 if(ime.equals(IME)){
                     baza.upisiNovePodatke(id, Ime.getText().toString().trim(), Sifra.getText().toString().trim());
@@ -74,9 +73,6 @@ public class AccountDetails extends AppCompatActivity {
             }else {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
             }
-        }else {
-            Toast.makeText(this, "Password is too short", Toast.LENGTH_SHORT).show();
-        }
 
 
 

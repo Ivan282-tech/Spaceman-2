@@ -33,7 +33,6 @@ public class Registracija extends AppCompatActivity {
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
         videoView.start();
-
     }
     @Override
     public void onBackPressed() {
@@ -60,7 +59,5 @@ public class Registracija extends AppCompatActivity {
                 sifra.getText().clear();
                 potvrda.getText().clear();
             }
-
-
     }
 }

@@ -30,15 +30,13 @@ public class Login extends AppCompatActivity {
         videoView.setVideoURI(uri);
         videoView.start();
     }
-    public void Registracija(View view)
-    {
+    public void Registracija(View view) {
         Intent intent = new Intent(this, Registracija.class);
         startActivity(intent);
         this.finish();
     }
 
-   public void login(View view)
-   {
+   public void login(View view) {
        MyDatabaseHelper baza = new MyDatabaseHelper(Login.this);
        EditText ime = findViewById(R.id.ImeLogin);
        EditText sifra = findViewById(R.id.SifraLogin);
@@ -54,8 +52,6 @@ public class Login extends AppCompatActivity {
        else{
            Toast.makeText(this, "Login has not been authorized", Toast.LENGTH_SHORT).show();
        }
-
-
    }
 
 }

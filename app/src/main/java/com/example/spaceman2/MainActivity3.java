@@ -5,19 +5,16 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.spaceman2.Login.id;
-import static com.example.spaceman2.Login.ime;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.VideoView;
 import static com.example.spaceman2.MainActivity2.sekunde;
 
-import org.w3c.dom.Text;
 
 public class MainActivity3 extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
