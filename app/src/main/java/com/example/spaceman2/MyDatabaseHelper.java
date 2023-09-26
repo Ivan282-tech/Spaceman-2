@@ -117,42 +117,24 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    Cursor vrati_sve() {
+    Cursor vrati_sve(String k) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = null;
         if(db != null){
-            c = db.rawQuery("SELECT  ime, maxSkor FROM Igrac" , null);
+            c = db.rawQuery("SELECT  ime, maxSkor FROM Igrac ORDER BY maxSkor " + k  , null);
         }
         return c;
     }
 
-    Cursor vrati_sve_najbolje() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = null;
-        if(db != null){
-            c = db.rawQuery("SELECT  ime, maxSkor FROM Igrac order by maxSkor DESC" , null);
-        }
-        return c;
-    }
-    Cursor vrati_sve_najgore() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = null;
-        if(db != null){
-            c = db.rawQuery("SELECT  ime, maxSkor FROM Igrac order by maxSkor ASC" , null);
-        }
-        return c;
-    }
     Cursor nadji_Ime(String ime){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT ime, maxSkor FROM Igrac WHERE ime = " + "'" + ime + "'" , null);
+        Cursor c = db.rawQuery("SELECT ime, maxSkor FROM Igrac WHERE ime LIKE '%" + ime + "%'", null);
         if(c.getCount() > 0){
             return c;
-        }else{
-            Toast.makeText(context, "Player does not exists", Toast.LENGTH_SHORT).show();
-            return null;
         }
-
+        return c;
     }
+
 
 
 
